@@ -1,110 +1,76 @@
 /* ==========================================
+HỆ THỐNG TRA CỨU KẾT QUẢ THI
+========================================== */
+
+/* ==========================================
 DỮ LIỆU HỌC SINH
 
-CÁCH THÊM HỌC SINH:
-
-"MÃ_HỌC_SINH": {
-name: "Họ tên",
-score: Điểm,
-comment: "Nhận xét"
-}
-
+MUỐN THÊM HỌC SINH:
+Copy một khối dữ liệu bên dưới và thay đổi
+mã số, tên, điểm và nhận xét.
 ========================================== */
 
 const students = {
 
 ```
 "20233513": {
-
     name: "Nguyễn Văn A",
-
     score: 8.5,
-
-    comment:
-        "Em có kết quả học tập tốt. "
-        + "Nắm vững kiến thức cơ bản và làm bài khá chính xác. "
-        + "Cần tiếp tục phát huy khả năng tư duy và kỹ năng trình bày bài làm."
-
+    comment: "Em có kết quả học tập tốt. Cần tiếp tục phát huy khả năng và duy trì tinh thần học tập."
 },
-
 
 "20233514": {
-
     name: "Trần Văn B",
-
     score: 7.25,
-
-    comment:
-        "Em đã nắm được phần lớn kiến thức của môn học. "
-        + "Cần dành thêm thời gian luyện tập các dạng bài nâng cao."
-
+    comment: "Em đã nắm được kiến thức cơ bản. Cần dành thêm thời gian luyện tập các bài tập nâng cao."
 },
-
 
 "20233515": {
-
     name: "Lê Văn C",
-
     score: 9.0,
-
-    comment:
-        "Em có kết quả rất tốt. "
-        + "Bài làm chính xác, trình bày rõ ràng và có tư duy tốt."
-
+    comment: "Em có kết quả rất tốt. Bài làm chính xác và trình bày rõ ràng. Tiếp tục phát huy."
 },
 
-
 "20233516": {
-
     name: "Phạm Văn D",
-
     score: 6.5,
-
-    comment:
-        "Em đã hoàn thành các yêu cầu cơ bản. "
-        + "Cần ôn tập thêm kiến thức nền tảng và luyện tập thường xuyên hơn."
-
+    comment: "Em đã hoàn thành các yêu cầu cơ bản. Cần ôn tập thêm và luyện tập thường xuyên hơn."
 }
 ```
 
 };
 
 /* ==========================================
-LẤY PHẦN TỬ HTML
+LẤY CÁC PHẦN TỬ TRONG HTML
 ========================================== */
 
-const studentIdInput =
-document.getElementById("studentId");
+const studentIdInput = document.getElementById("studentId");
 
-const searchButton =
-document.getElementById("searchButton");
+const searchButton = document.getElementById("searchButton");
 
-const errorMessage =
-document.getElementById("errorMessage");
+const searchSection = document.getElementById("searchSection");
 
-const searchSection =
-document.getElementById("searchSection");
+const resultSection = document.getElementById("resultSection");
 
-const resultSection =
-document.getElementById("resultSection");
+const errorMessage = document.getElementById("errorMessage");
 
-const studentName =
-document.getElementById("studentName");
+const studentName = document.getElementById("studentName");
 
-const resultStudentId =
-document.getElementById("resultStudentId");
+const resultStudentId = document.getElementById("resultStudentId");
 
-const studentScore =
-document.getElementById("studentScore");
+const studentScore = document.getElementById("studentScore");
 
-const studentRank =
-document.getElementById("studentRank");
+const studentRank = document.getElementById("studentRank");
 
-const teacherComment =
-document.getElementById("teacherComment");
+const teacherComment = document.getElementById("teacherComment");
 
-const backButton =
-document.getElementById("backButton");
+const backButton = document.getElementById("backButton");
+
+/* ==========================================
+KIỂM TRA FILE JAVASCRIPT
+========================================== */
+
+console.log("Hệ thống tra cứu kết quả đã được tải.");
 
 /* ==========================================
 HÀM XẾP LOẠI
@@ -114,66 +80,44 @@ function getRank(score) {
 
 ```
 if (score >= 9) {
-
     return "Xuất sắc";
-
 }
 
-else if (score >= 8) {
-
+if (score >= 8) {
     return "Giỏi";
-
 }
 
-else if (score >= 6.5) {
-
+if (score >= 6.5) {
     return "Khá";
-
 }
 
-else if (score >= 5) {
-
+if (score >= 5) {
     return "Trung bình";
-
 }
 
-else {
-
-    return "Cần cố gắng";
-
-}
+return "Cần cố gắng";
 ```
 
 }
 
 /* ==========================================
-TRA CỨU KẾT QUẢ
+HÀM TRA CỨU KẾT QUẢ
 ========================================== */
 
 function searchResult() {
 
 ```
-/*
-   Lấy mã học sinh
-   trim() giúp loại bỏ khoảng trắng
-*/
+/* Lấy mã học sinh */
 
-const studentId =
-    studentIdInput.value.trim();
+const studentId = studentIdInput.value.trim();
 
 
-
-/*
-   Xóa thông báo lỗi cũ
-*/
+/* Xóa thông báo lỗi cũ */
 
 errorMessage.textContent = "";
 
 
-
-/*
-   Kiểm tra nếu chưa nhập mã
-*/
+/* Kiểm tra chưa nhập mã */
 
 if (studentId === "") {
 
@@ -181,155 +125,65 @@ if (studentId === "") {
         "Vui lòng nhập mã số học sinh.";
 
     return;
-
 }
 
 
+/* Tìm học sinh */
 
-/*
-   Tìm học sinh trong dữ liệu
-*/
-
-const student =
-    students[studentId];
+const student = students[studentId];
 
 
-
-/*
-   Nếu không tìm thấy
-*/
+/* Nếu không tìm thấy */
 
 if (!student) {
 
     errorMessage.textContent =
-        "Không tìm thấy kết quả của mã học sinh này.";
+        "Không tìm thấy kết quả của mã học sinh: " + studentId;
 
     return;
-
 }
 
 
+/* Hiển thị dữ liệu */
 
-/*
-   Hiển thị dữ liệu
-*/
+studentName.textContent = student.name;
 
-studentName.textContent =
-    student.name;
+resultStudentId.textContent = studentId;
 
+studentScore.textContent = student.score;
 
-resultStudentId.textContent =
-    studentId;
+studentRank.textContent = getRank(student.score);
 
-
-studentScore.textContent =
-    student.score;
+teacherComment.textContent = student.comment;
 
 
-studentRank.textContent =
-    getRank(student.score);
-
-
-teacherComment.textContent =
-    student.comment;
-
-
-
-/*
-   Ẩn màn hình tìm kiếm
-*/
+/* Ẩn màn hình tra cứu */
 
 searchSection.classList.add("hidden");
 
 
-
-/*
-   Hiện màn hình kết quả
-*/
+/* Hiển thị màn hình kết quả */
 
 resultSection.classList.remove("hidden");
 
 
-
-/*
-   Cuộn lên đầu màn hình
-*/
+/* Cuộn lên đầu trang */
 
 window.scrollTo({
-
     top: 0,
-
     behavior: "smooth"
-
 });
 ```
 
 }
 
 /* ==========================================
-QUAY LẠI TRA CỨU
-========================================== */
-
-function goBack() {
-
-```
-/*
-   Ẩn kết quả
-*/
-
-resultSection.classList.add("hidden");
-
-
-
-/*
-   Hiện màn hình tìm kiếm
-*/
-
-searchSection.classList.remove("hidden");
-
-
-
-/*
-   Xóa mã cũ
-*/
-
-studentIdInput.value = "";
-
-
-
-/*
-   Xóa thông báo lỗi
-*/
-
-errorMessage.textContent = "";
-
-
-
-/*
-   Đặt con trỏ vào ô nhập
-*/
-
-setTimeout(() => {
-
-    studentIdInput.focus();
-
-}, 100);
-```
-
-}
-
-/* ==========================================
-EVENT CLICK
+SỰ KIỆN BẤM NÚT TRA CỨU
 ========================================== */
 
 searchButton.addEventListener(
-
-```
 "click",
-
 searchResult
-```
-
 );
 
 /* ==========================================
@@ -337,12 +191,10 @@ NHẤN ENTER ĐỂ TRA CỨU
 ========================================== */
 
 studentIdInput.addEventListener(
-
-```
 "keydown",
-
 function(event) {
 
+```
     if (event.key === "Enter") {
 
         searchResult();
@@ -355,15 +207,36 @@ function(event) {
 );
 
 /* ==========================================
-QUAY LẠI
+QUAY LẠI MÀN HÌNH TRA CỨU
 ========================================== */
 
 backButton.addEventListener(
+"click",
+function() {
 
 ```
-"click",
+    /* Ẩn kết quả */
 
-goBack
+    resultSection.classList.add("hidden");
+
+
+    /* Hiển thị trang tra cứu */
+
+    searchSection.classList.remove("hidden");
+
+
+    /* Xóa dữ liệu cũ */
+
+    studentIdInput.value = "";
+
+    errorMessage.textContent = "";
+
+
+    /* Đưa con trỏ vào ô nhập */
+
+    studentIdInput.focus();
+
+}
 ```
 
 );
