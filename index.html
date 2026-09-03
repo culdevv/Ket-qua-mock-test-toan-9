@@ -16,18 +16,14 @@
 <body>
 
 ```
-<div class="background"></div>
-
-<!-- =========================
-     TRANG TRA CỨU
-========================== -->
 <main class="container">
 
+    <!-- =========================
+         MÀN HÌNH TRA CỨU
+    ========================== -->
     <section class="search-card" id="searchSection">
 
-        <div class="logo">
-            🎓
-        </div>
+        <div class="icon">🎓</div>
 
         <h1>TRA CỨU KẾT QUẢ THI</h1>
 
@@ -50,64 +46,62 @@
 
         </div>
 
-        <button id="searchButton">
-            XEM KẾT QUẢ
+        <button type="button" id="searchButton">
+            TRA CỨU KẾT QUẢ
         </button>
 
-        <p class="error-message" id="errorMessage"></p>
+        <p id="errorMessage"></p>
 
     </section>
 
 
     <!-- =========================
-         TRANG HIỂN THỊ KẾT QUẢ
+         MÀN HÌNH KẾT QUẢ
     ========================== -->
     <section class="result-card hidden" id="resultSection">
 
-        <div class="result-header">
+        <div class="icon">🎓</div>
 
-            <div class="logo">
-                🎓
-            </div>
-
-            <h1>KẾT QUẢ THI</h1>
-
-        </div>
+        <h1>KẾT QUẢ THI</h1>
 
 
-        <div class="student-info">
+        <div class="result-row">
 
-            <div class="info-row">
-                <span>Họ và tên</span>
-                <strong id="studentName"></strong>
-            </div>
+            <span>Họ và tên</span>
 
-            <div class="info-row">
-                <span>Mã số học sinh</span>
-                <strong id="resultStudentId"></strong>
-            </div>
+            <strong id="studentName"></strong>
 
         </div>
 
 
-        <div class="score-section">
+        <div class="result-row">
 
-            <h2>📊 Kết quả</h2>
+            <span>Mã số học sinh</span>
 
-            <div class="score-row">
-                <span>Điểm số</span>
-                <strong id="studentScore"></strong>
-            </div>
-
-            <div class="score-row">
-                <span>Xếp loại</span>
-                <strong id="studentRank"></strong>
-            </div>
+            <strong id="resultStudentId"></strong>
 
         </div>
 
 
-        <div class="comment-section">
+        <div class="result-row">
+
+            <span>Điểm</span>
+
+            <strong id="studentScore"></strong>
+
+        </div>
+
+
+        <div class="result-row">
+
+            <span>Xếp loại</span>
+
+            <strong id="studentRank"></strong>
+
+        </div>
+
+
+        <div class="comment-box">
 
             <h2>💬 Nhận xét của giáo viên</h2>
 
@@ -116,7 +110,7 @@
         </div>
 
 
-        <button class="back-button" id="backButton">
+        <button type="button" id="backButton">
             ← TRA CỨU LẠI
         </button>
 
@@ -127,13 +121,12 @@
 
 <footer>
 
-    <p>
-        © 2026 - Hệ thống tra cứu kết quả thi
-    </p>
+    © 2026 - Hệ thống tra cứu kết quả thi
 
 </footer>
 
 
+<!-- FILE JAVASCRIPT -->
 <script src="script.js"></script>
 ```
 
