@@ -16,25 +16,25 @@ const students = {
 "20233513": {
     name: "Nguyễn Văn A",
     score: 8.5,
-    comment: "Em có kết quả học tập tốt. Cần tiếp tục phát huy khả năng và duy trì tinh thần học tập."
+    comment: 'Em có kết quả học tập tốt. Cần tiếp tục phát huy khả năng và duy trì tinh thần học tập.'
 },
 
 "20233514": {
     name: "Trần Văn B",
     score: 7.25,
-    comment: "Em đã nắm được kiến thức cơ bản. Cần dành thêm thời gian luyện tập các bài tập nâng cao."
+    comment: 'Em đã nắm được kiến thức cơ bản. Cần dành thêm thời gian luyện tập các bài tập nâng cao.'
 },
 
 "20233515": {
     name: "Lê Văn C",
     score: 9.0,
-    comment: "Em có kết quả rất tốt. Bài làm chính xác và trình bày rõ ràng. Tiếp tục phát huy."
+    comment: 'Em có kết quả rất tốt. Bài làm chính xác và trình bày rõ ràng. Tiếp tục phát huy.'
 },
 
 "20233516": {
     name: "Phạm Văn D",
     score: 6.5,
-    comment: "Em đã hoàn thành các yêu cầu cơ bản. Cần ôn tập thêm và luyện tập thường xuyên hơn."
+    comment: 'Em đã hoàn thành các yêu cầu cơ bản. Cần ôn tập thêm và luyện tập thường xuyên hơn.'
 }
 ```
 
