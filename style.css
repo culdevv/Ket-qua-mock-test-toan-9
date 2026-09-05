@@ -5,198 +5,252 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #2d3748;
 }
 
+/* =========================
+   CONTAINER & CARDS
+========================= */
 .container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 15px;
+    padding: 40px 20px;
 }
 
 .search-card,
 .result-card {
     width: 100%;
-    max-width: 520px;
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.4s ease;
+    max-width: 580px; /* Tăng chiều rộng giúp nội dung không bị ríu */
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 48px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.3s ease-out;
 }
 
+/* =========================
+   HEADER & LOGO
+========================= */
 .logo {
-    width: 75px;
-    height: 75px;
+    width: 72px;
+    height: 72px;
     margin: 0 auto 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 38px;
+    font-size: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
 }
 
 h1 {
     text-align: center;
-    font-size: 27px;
-    margin-bottom: 12px;
-    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    color: #1a202c;
 }
 
 .subtitle {
     text-align: center;
-    color: #777;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    color: #718096;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 32px;
 }
 
+/* =========================
+   INPUT GROUP
+========================= */
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .input-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4a5568;
 }
 
 .input-group input {
     width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
     outline: none;
     font-size: 16px;
-    transition: 0.3s;
+    transition: all 0.2s ease;
+    background: #f8fafc;
 }
 
 .input-group input:focus {
     border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
 }
 
+/* =========================
+   BUTTONS
+========================= */
 button {
     width: 100%;
     border: none;
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 12px;
+    padding: 16px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    color: white;
+    color: #ffffff;
     background: linear-gradient(135deg, #667eea, #764ba2);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
 }
 
 button:active {
     transform: translateY(0);
 }
 
-.error-message {
-    min-height: 20px;
-    margin-top: 15px;
-    text-align: center;
-    color: #e74c3c;
-    font-size: 14px;
+.back-button {
+    background: linear-gradient(135deg, #4a5568, #2d3748);
+    box-shadow: 0 8px 20px rgba(45, 55, 72, 0.25);
+    margin-top: 10px;
 }
 
+.back-button:hover {
+    box-shadow: 0 12px 24px rgba(45, 55, 72, 0.35);
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+.error-message {
+    min-height: 24px;
+    margin-top: 16px;
+    text-align: center;
+    color: #e53e3e;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* =========================
+   RESULT SECTION DETAILS
+========================= */
 .result-header {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .student-info {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 25px;
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 8px 20px;
+    margin-bottom: 24px;
+    border: 1px solid #edf2f7;
 }
 
 .info-row {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
 }
 
 .info-row span {
-    color: #777;
+    color: #718096;
+    font-size: 14px;
 }
 
 .info-row strong {
-    text-align: right;
+    color: #2d3748;
+    font-size: 15px;
 }
 
 .score-section {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
-.score-section h2 {
-    font-size: 19px;
-    margin-bottom: 15px;
+.score-section h2,
+.comment-section h2 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #2d3748;
 }
 
 .score-row {
     display: flex;
     justify-content: space-between;
-    padding: 14px;
+    align-items: center;
+    padding: 14px 18px;
     margin-bottom: 10px;
-    border-radius: 10px;
-    background: #f6f7fb;
+    border-radius: 12px;
+    background: #f0f3ff;
+}
+
+.score-row span {
+    font-weight: 600;
+    color: #4a5568;
 }
 
 .score-row strong {
-    color: #667eea;
+    color: #5a67d8;
     font-size: 18px;
 }
 
 .comment-section {
     padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    background: #f8f9ff;
-    border-left: 5px solid #667eea;
-}
-
-.comment-section h2 {
-    font-size: 18px;
-    margin-bottom: 12px;
+    margin-bottom: 28px;
+    border-radius: 14px;
+    background: #fafbfd;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
 .comment-section p {
-    color: #555;
+    color: #4a5568;
     line-height: 1.7;
+    font-size: 15px;
 }
 
-.back-button {
-    background: linear-gradient(135deg, #555, #333);
-}
-
+/* =========================
+   FOOTER & UTILS
+========================= */
 footer {
     text-align: center;
     padding: 20px;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
@@ -204,22 +258,13 @@ footer {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
     .search-card,
     .result-card {
-        padding: 28px 22px;
+        padding: 30px 24px;
     }
 
     h1 {
         font-size: 22px;
-    }
-
-    .info-row {
-        flex-direction: column;
-        gap: 6px;
-    }
-
-    .info-row strong {
-        text-align: left;
     }
 }
