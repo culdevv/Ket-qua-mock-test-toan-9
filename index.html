@@ -1,133 +1,72 @@
 <!DOCTYPE html>
-
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-```
-<title>Tra cứu kết quả thi</title>
-
-<link rel="stylesheet" href="style.css">
-```
-
+    <title>Tra cứu kết quả thi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-```
 <main class="container">
 
-    <!-- =========================
-         MÀN HÌNH TRA CỨU
-    ========================== -->
     <section class="search-card" id="searchSection">
-
-        <div class="icon">🎓</div>
-
+        <div class="logo">🎓</div>
         <h1>TRA CỨU KẾT QUẢ THI</h1>
-
-        <p class="subtitle">
-            Vui lòng nhập mã số học sinh để xem kết quả
-        </p>
+        <p class="subtitle">Vui lòng nhập mã số học sinh để xem kết quả</p>
 
         <div class="input-group">
-
-            <label for="studentId">
-                Mã số học sinh
-            </label>
-
-            <input
-                type="text"
-                id="studentId"
-                placeholder="Ví dụ: 20233513"
-                autocomplete="off"
-            >
-
+            <label for="studentId">Mã số học sinh</label>
+            <input type="text" id="studentId" placeholder="Ví dụ: 20233513" autocomplete="off">
         </div>
 
-        <button type="button" id="searchButton">
-            TRA CỨU KẾT QUẢ
-        </button>
-
-        <p id="errorMessage"></p>
-
+        <button id="searchButton">XEM KẾT QUẢ</button>
+        <p class="error-message" id="errorMessage"></p>
     </section>
 
-
-    <!-- =========================
-         MÀN HÌNH KẾT QUẢ
-    ========================== -->
     <section class="result-card hidden" id="resultSection">
-
-        <div class="icon">🎓</div>
-
-        <h1>KẾT QUẢ THI</h1>
-
-
-        <div class="result-row">
-
-            <span>Họ và tên</span>
-
-            <strong id="studentName"></strong>
-
+        <div class="result-header">
+            <div class="logo">🎓</div>
+            <h1>KẾT QUẢ THI</h1>
         </div>
 
-
-        <div class="result-row">
-
-            <span>Mã số học sinh</span>
-
-            <strong id="resultStudentId"></strong>
-
+        <div class="student-info">
+            <div class="info-row">
+                <span>Họ và tên</span>
+                <strong id="studentName"></strong>
+            </div>
+            <div class="info-row">
+                <span>Mã số học sinh</span>
+                <strong id="resultStudentId"></strong>
+            </div>
         </div>
 
-
-        <div class="result-row">
-
-            <span>Điểm</span>
-
-            <strong id="studentScore"></strong>
-
+        <div class="score-section">
+            <h2>📊 Kết quả</h2>
+            <div class="score-row">
+                <span>Điểm số</span>
+                <strong id="studentScore"></strong>
+            </div>
+            <div class="score-row">
+                <span>Xếp loại</span>
+                <strong id="studentRank"></strong>
+            </div>
         </div>
 
-
-        <div class="result-row">
-
-            <span>Xếp loại</span>
-
-            <strong id="studentRank"></strong>
-
-        </div>
-
-
-        <div class="comment-box">
-
+        <div class="comment-section">
             <h2>💬 Nhận xét của giáo viên</h2>
-
             <p id="teacherComment"></p>
-
         </div>
 
-
-        <button type="button" id="backButton">
-            ← TRA CỨU LẠI
-        </button>
-
+        <button class="back-button" id="backButton">← TRA CỨU LẠI</button>
     </section>
 
 </main>
 
-
 <footer>
-
-    © 2026 - Hệ thống tra cứu kết quả thi
-
+    <p>© 2026 - Hệ thống tra cứu kết quả thi</p>
 </footer>
 
-
-<!-- FILE JAVASCRIPT -->
 <script src="script.js"></script>
-```
-
-</body> </html>
+</body>
+</html>
